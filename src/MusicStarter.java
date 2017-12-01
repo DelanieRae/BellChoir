@@ -11,12 +11,12 @@ class MusicStarter implements Runnable {
 	public List<BellNote> b;
 	public Note note;
 	private final Tone t;
-	
 
 	public final Thread thread;
-	
+
 	/**
 	 * Must be passes the song, note and type
+	 * 
 	 * @param song
 	 * @param n
 	 * @param a
@@ -45,14 +45,14 @@ class MusicStarter implements Runnable {
 	 */
 	@Override
 	public synchronized void run() {
-				while (playTime) {
-					try {
-						wait();
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-					}
-				}
+		while (playTime) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
 			}
+		}
+	}
 
 	/**
 	 * Stops threads
@@ -64,9 +64,9 @@ class MusicStarter implements Runnable {
 		} catch (InterruptedException e) {
 			System.err.println(thread.getName() + " stop malfunction");
 		}
-		
+
 	}
-	
+
 	/**
 	 * Calls the ChosenNote method
 	 */
